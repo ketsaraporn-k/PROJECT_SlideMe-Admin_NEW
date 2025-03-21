@@ -31,3 +31,4 @@ node_modules/
 SlideMe(Admin)_Backend/databases/mysql-data/
 SlideMe(Admin)_Backend/databases/mysql-data/mysql.sock
 
+*.sock
