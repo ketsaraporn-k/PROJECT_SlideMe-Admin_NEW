@@ -1,0 +1,147 @@
+/* พื้นหลัง */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/zig-zag.png"); /* ใช้พื้นหลังที่อยู่ใน public */
+  background-size: cover;
+  background-position: center;
+  font-family: "Noto Sans Thai", sans-serif;
+  font-weight: bold;
+}
+
+/* กล่อง Login */
+.login-box {
+  background: rgba(255, 255, 255, 0.9); /* ทำให้โปร่งแสงเล็กน้อย */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  
+  
+}
+
+/* หัวข้อ */
+.login-box h1 {
+  color: #2E7D32;
+  font-size: 28px;
+  margin-bottom: 20px;
+  
+}
+
+/* ช่องกรอกข้อมูล */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 13px;
+  transition: 0.3s;
+  font-weight: bold;
+  
+  
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อโฟกัส */
+.login-box input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* ปุ่ม */
+.login-box button.login {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  transition: 0.3s;
+  margin-top: 0px;
+  font-weight: bold;
+
+}
+
+.login-box button.login {
+  background-color: #28a745; /* สีเขียว */
+  
+}
+
+.login-box button:hover {
+  opacity: 0.85;
+}
+
+/* ลิงก์ Forgot Password */
+.forgot-password {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #949494;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.account-name {
+  text-align: left;
+  display: block; /* ทำให้ label ขยายเต็มความกว้าง */
+  font-size: 14px;
+  color: #0e0d0d;
+  text-decoration: none;
+
+}
+
+.login-logo img{
+  width: 50%; /* ขนาดของรูป 80% ของความกว้างของ .sidebar-logo */
+    height: auto; /* ความสูงจะปรับให้เหมาะสมกับความกว้าง */
+    object-fit: contain; /* ปรับให้รูปภาพคงสัดส่วน */
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+}
+
+.password-container input:focus {
+  border-color: #28a745;
+}
+
+.show-password-btn {
+  position: absolute;
+  left: 300px; /* วางปุ่มที่ด้านซ้ายของ input */
+  top: 52%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #a5a4a4 !important; /* ใช้ !important เพื่อให้แน่ใจว่าสีดำจะถูกใช้ */
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.show-password-btn:hover {
+  color: #333333 !important; /* สีเทาเข้มเมื่อ hover */
+  text-decoration: underline;
+}
+
+
