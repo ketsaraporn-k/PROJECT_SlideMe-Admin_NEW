@@ -15,8 +15,12 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.2",
     "mysql": "^2.18.1",
-    "mysql2": "^3.13.0"
+    "mysql2": "^3.13.0",
+    "slideme(admin)_backend": "file:",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "description": ""
 }

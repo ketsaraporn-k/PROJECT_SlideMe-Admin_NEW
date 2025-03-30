@@ -1,12 +1,195 @@
-import "./BannerManagement.css"
+import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
+import "./BannerManagement.css";
+
+let currentRequestSource = null;
 
 function BannerManagement() {
-    return ( 
-        <div className="banner-management-container">
-            <h1>Banner Management</h1>
-        </div>
+  const fileRef = useRef();
+  const [progress, setProgress] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [formFields, setFormFields] = useState({
+    title: "",
+    subtitle: "",
+    description: "",
+  });
+  const [banners, setBanners] = useState([]); // เก็บรายการแบนเนอร์
 
-     );
+  // Cleanup URL.createObjectURL ป้องกัน memory leak
+  useEffect(() => {
+    return () => {
+      if (preview) {
+        URL.revokeObjectURL(preview);
+      }
+    };
+  }, [preview]);
+
+  // โหลดรายการแบนเนอร์จากเซิร์ฟเวอร์
+  useEffect(() => {
+    axios.get("http://localhost:3000/files/list")
+      .then((res) => setBanners(res.data))
+      .catch((err) => console.error("Error fetching banners:", err));
+  }, []);
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+
+  const handleCancel = () => {
+    setSelectedFile(null);
+    setPreview("");
+    setSelectedDate("");
+    setIsActive(false);
+    setFormFields({ title: "", subtitle: "", description: "" });
+    alert("ฟอร์มถูกล้างข้อมูลเรียบร้อย!");
+  };
+
+
+
+  const handleSaveClick = async () => {
+    const bannerData = {
+      title: formFields.title,
+      subtitle: formFields.subtitle,
+      description: formFields.description,
+      date: selectedDate,
+      isActive: isActive ? 1 : 0, // แปลงเป็น 1 หรือ 0
+      imageUrl: preview,
+    };
+  
+    try {
+      const res = await axios.post("http://localhost:3000/bannerinfo/banner", bannerData);
+      console.log("บันทึกข้อมูลแบนเนอร์:", res.data);
+      alert("บันทึกข้อมูลสำเร็จ!");
+    } catch (err) {
+      console.error("Error saving banner:", err);
+      alert("เกิดข้อผิดพลาดในการบันทึกข้อมูล");
+    }
+  };
+
+  const toggleStatus = () => {
+    setIsActive(!isActive);
+  };
+
+  const uploadClick = () => {
+    if (!fileRef.current.files[0]) {
+      return alert("กรุณาเลือกไฟล์ก่อนอัปโหลด");
+    }
+
+    const formData = new FormData();
+    formData.append("test", fileRef.current.files[0]);
+
+    currentRequestSource = axios.CancelToken.source();
+    axios
+      .post("http://localhost:3000/files/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+        onUploadProgress: (progressEvent) => {
+          if (progressEvent.total) {
+            setProgress(Math.round((progressEvent.loaded / progressEvent.total) * 100));
+          }
+        },
+        cancelToken: currentRequestSource.token,
+      })
+      .then((res) => {
+        alert("อัปโหลดไฟล์สำเร็จ!");
+        setPreview(res.data.url); // ใช้ URL จากเซิร์ฟเวอร์
+      })
+      .catch((err) => {
+        console.error("File upload failed:", err);
+      })
+      .finally(() => {
+        fileRef.current.value = null;
+        setProgress(0);
+      });
+  };
+
+  const cancelClick = () => {
+    if (currentRequestSource !== null) {
+      currentRequestSource.cancel();
+    }
+  };
+
+  return (
+    <div>
+      <div className="banner-management-container">
+        <div className="banner-container">
+          <h2>Banner Management</h2>
+          <div className="banner-card"
+            style={{
+              backgroundImage: preview ? `url(${preview})` : "none",
+              backgroundColor: !preview ? "green" : "transparent",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}>
+            <div className="banner-content">
+              <h3>{selectedDate || "เลือกวันที่"}</h3>
+              <h1>{formFields.title || "หัวข้อหลัก"}</h1>
+              <p>{formFields.subtitle || "หัวข้อย่อย"}</p>
+              <button className="btn-get-started">Get Started</button>
+            </div>
+
+            
+
+            
+          </div>
+          {/* uploadfile */}
+      <div className="upload-container">
+        <h1>Upload</h1>
+            <div>
+              <input type="file" ref={fileRef} />
+              <div>
+                    <button className="upload-button" onClick={uploadClick}>
+                      &uarr;
+                    </button>
+                    &nbsp;
+                    <button onClick={() => cancelClick()} >&times;</button>
+                  </div>
+              <progress value={progress} max={100} style={{ width: "100%" }}></progress>
+
+            </div>
+
+            
+      </div>
+
+          <div className="form-section">
+            <div className="form-group">
+              <label>หัวข้อ</label>
+              <input type="text" name="title" value={formFields.title} onChange={handleFieldChange} placeholder="Enter" />
+            </div>
+            <div className="form-group">
+              <label>หัวข้อย่อย</label>
+              <input type="text" name="subtitle" value={formFields.subtitle} onChange={handleFieldChange} placeholder="Enter" />
+            </div>
+            <div className="form-group">
+              <label>รายละเอียด</label>
+              <textarea name="description" value={formFields.description} onChange={handleFieldChange} placeholder="Enter"></textarea>
+            </div>
+            <div className="form-group">
+              <label>วันที่</label>
+              <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>สถานะ</label>
+              <label className="toggle">
+                <input type="checkbox" checked={isActive} onChange={toggleStatus} />
+                <span className="slider"></span>
+              </label>
+            </div>
+            <div className="form-actions">
+              <button className="save-button" onClick={handleSaveClick}>บันทึก</button>
+              <button className="cancel-button" onClick={handleCancel}>ยกเลิก</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+    </div>
+  );
 }
 
 export default BannerManagement;

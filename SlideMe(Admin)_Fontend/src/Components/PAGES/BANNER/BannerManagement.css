@@ -3,3 +3,309 @@
     margin-top: 0.5rem;
     margin-left: 320px; /* ขยับเนื้อหาไปทางขวา */
 }
+.banner-container .upload-container{
+    background-color: bisque;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-left: 320px; /* ขยับเนื้อหาไปทางขวา */
+}
+
+.banner-container .upload-input{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    
+}
+
+.upload-button{
+    background-color: red;
+    color: white;
+}
+
+/* BannerManagementcss */
+
+/* Mobile */
+@media (max-width: 768px) {
+    .banner-container {
+      padding: 1rem;
+      
+    }
+  
+    .banner-card {
+      flex-direction: column;
+      /* เปลี่ยนการจัดเรียงของคอนเทนต์ใน banner-card */
+    }
+  
+    .banner-content {
+      max-width: 100%;
+      
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1201px) {
+    .banner-container {
+      max-width: 100%;
+      /* อนุญาตให้ยืดเต็มพื้นที่หน้าจอ */
+    }
+  
+  }
+  
+  .banner-container {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    /* กำหนดความกว้างสูงสุดที่ต้องการ */
+    width: 100%;
+    /* ใช้พื้นที่ว่างทั้งหมด */
+    margin: 0 auto;
+    /* จัดให้อยู่กลางหน้าจอ */
+  }
+  
+  /* .banner-container {
+    border: 2px solid #66bb6a;
+    
+  } */
+  
+  .banner-container .banner-card {
+    
+    background-color: #4caf50;
+    border-radius: 1rem;
+    color: rgb(0, 0, 0);
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .banner-container .banner-content {
+    max-width: 60%;
+  }
+  
+  .banner-container .banner-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .banner-container .banner-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .banner-container .banner-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .banner-container .btn-get-started {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .banner-container .banner-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .banner-container .arrow-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .banner-container .upload-photo {
+  
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .banner-container .btn-upload {
+    background-color: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .banner-container .form-section {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .banner-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .banner-container .form-group label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .banner-container .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+  
+  .banner-container textarea {
+    height: 5rem;
+  }
+  
+  .banner-container .status-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .banner-container .form-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .banner-container .save-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #03D069;
+    color: white;
+  }
+  
+  .banner-container .cancel-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    margin-left: 10px;
+  }
+  
+  /* Popup styles */
+  .banner-container .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .banner-container .popup {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .banner-container .popup h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .banner-container .popup p {
+    margin-bottom: 2rem;
+  }
+  
+  .banner-container .popup-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .banner-container .btn-confirm {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .banner-container .btn-cancel {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .banner-container .status-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #ddd;
+    color: white;
+  }
+  
+  .banner-container .status-btn.active {
+    background-color: #4caf50;
+    /* สีสำหรับสถานะเปิด */
+  }
+  
+  .banner-container .status-btn:not(.active) {
+    background-color: #f44336;
+    /* สีสำหรับสถานะปิด */
+  }
+  
+  .banner-container .preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .banner-container .preview-image {
+    max-width: 300px;
+    max-height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .banner-container .preview-container,
+  .preview-image {
+    display: none;
+  }
+  
+  .banner-container input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+  
+  
+  
