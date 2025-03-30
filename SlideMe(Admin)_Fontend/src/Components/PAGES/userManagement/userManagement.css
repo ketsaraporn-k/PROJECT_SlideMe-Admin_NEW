@@ -1,0 +1,54 @@
+.user-management-container {
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 320px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-management-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.user-management-container .user-management-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.user-management-container .user-management-table th,
+.user-management-container .user-management-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-management-container .user-management-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-management-container .user-management-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-management-container .details-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.user-management-container .details-btn:hover {
+  background-color: #333;
+}

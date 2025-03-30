@@ -32,6 +32,39 @@ function Navber({ tab, setTab, setToken }) {
           </Link>
         </li>
 
+        {/* ปุ่ม Provider Approve */}
+        <li>
+          <Link
+            to="/providerapprove"
+            className={`menu-item ${tab === "providerapprove" ? "active" : ""}`}
+            onClick={() => setTab("providerapprove")}
+          >
+            Provider Approve
+          </Link>
+        </li>
+        
+        {/* ปุ่ม Provider Management */}
+        <li>
+          <Link
+            to="/providermanagement"
+            className={`menu-item ${tab === "providermanagement" ? "active" : ""}`}
+            onClick={() => setTab("providermanagement")}
+          >
+            Provider Management
+          </Link>
+        </li>
+          
+          {/* ปุ่ม User Management */}
+          <li>
+          <Link
+            to="/usermanagement"
+            className={`menu-item ${tab === "usermanagement" ? "active" : ""}`}
+            onClick={() => setTab("usermanagement")}
+          >
+            User Management
+          </Link>
+        </li>
+
 
       </ul>
 

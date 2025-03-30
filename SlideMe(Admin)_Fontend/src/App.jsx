@@ -10,7 +10,13 @@ import LAYOUT from "./Components/LAYOUT/Layout/Layout";
 /* import PAGES */
 import Home from "./Components/PAGES/HOME/Home";
 import BannerManagement from "./Components/PAGES/BANNER/BannerManagement";
+import ProviderApprove from "./Components/PAGES/providerApprove/providerApprove";
 
+import ProviderApproveDetail from "./Components/PAGES/providerApprove/providerApproveDetail/providerApproveDetail";
+import ProviderManagement from "./Components/PAGES/providerManagement/providerManagement";
+import ProviderDetail from "./Components/PAGES/providerManagement/providerDetail/providerDetail";
+import UserManagement from "./Components/PAGES/userManagement/userManagement";
+import UserManagementDetail from "./Components/PAGES/userManagement/userManagementDetail/userManagementDetail";
 
 
 
@@ -25,7 +31,7 @@ function App() {
 
   // ✅ ฟังก์ชันสำหรับล็อกอิน
   const handleLogin = () => {
-    const fakeToken = "your-token"; 
+    const fakeToken = "your-token";
     localStorage.setItem("token", fakeToken);
     setToken(fakeToken);
   };
@@ -38,11 +44,52 @@ function App() {
 
   return (
     <HashRouter>
-      {isLoggedIn && <LAYOUT tab={tab} setTab={setTab} setToken={handleLogout} />}
+      {isLoggedIn && (
+        <LAYOUT tab={tab} setTab={setTab} setToken={handleLogout} />
+      )}
       <Routes>
-        <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <Login onLogin={handleLogin} />} />
-        <Route path="/home" element={isLoggedIn ? <Home /> : <Navigate to="/" />} />
-        <Route path="/bannermanagement" element={isLoggedIn ? <BannerManagement /> : <Navigate to="/" />} />
+        <Route
+          path="/"
+          element={
+            isLoggedIn ? (
+              <Navigate to="/home" />
+            ) : (
+              <Login onLogin={handleLogin} />
+            )
+          }
+        />
+        <Route
+          path="/home"
+          element={isLoggedIn ? <Home /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/bannermanagement"
+          element={isLoggedIn ? <BannerManagement /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/providerapprove"
+          element={isLoggedIn ? <ProviderApprove /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/providerapprovedetail/:id"
+          element={isLoggedIn ? <ProviderApproveDetail /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/providermanagement"
+          element={isLoggedIn ? <ProviderManagement /> : <Navigate to="/" />}
+        />
+        <Route
+        path="/providerdetail/:id"
+        element={isLoggedIn ? <ProviderDetail /> : <Navigate to="/" />}
+      />
+      <Route
+        path="/usermanagement"
+        element={isLoggedIn ? <UserManagement /> : <Navigate to="/" />}
+      />
+      <Route
+        path="/userManagement/:id"
+        element={isLoggedIn ? <UserManagementDetail /> : <Navigate to="/" />}
+      />
       </Routes>
     </HashRouter>
   );
