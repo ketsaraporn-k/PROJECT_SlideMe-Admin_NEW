@@ -1,0 +1,193 @@
+.order-management-container {
+  width: 60%;
+  padding: 20px;
+  font-family: sans-serif;
+  margin: auto;
+  
+}
+
+.order-management-title {
+  font-size: 40px;
+  margin: 100px 0 20px 0;
+  text-align: center;
+}
+
+/* ---------- Order Filter ---------- */
+.order-management-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+.order-management-container .order-management-filter input.order-management-filter-search,
+.order-management-container .order-management-filter select.order-management-filter-status {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  width: 200px;
+  height: 40px;
+}
+
+.order-management-filter-search:focus,
+.order-management-filter-status:focus {
+  border-color: black;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Status Dot for Dropdown (select) ---------- */
+.order-management-filter-status {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4"><path d="M0 0h8L4 4z" fill="black"/></svg>')
+    no-repeat right 8px center;
+  background-size: 8px;
+  padding-right: 25px;
+}
+
+.order-management-filter-status option {
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+/* ---------- Error Message ---------- */
+.order-management-error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* ---------- Table ---------- */
+.order-management-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-management-table-header,
+.order-management-table-data {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.order-management-table-header {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.order-management-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.order-management-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ---------- Detail Button ---------- */
+.order-management-detail-button {
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.order-management-detail-button:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* ---------- Status Dot ---------- */
+.order-management-status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* กำหนดสีให้สถานะต่าง ๆ */
+.order-management-status-dot.success {
+  background-color: green;
+}
+
+.order-management-status-dot.in-progress {
+  background-color: orange;
+}
+
+.order-management-status-dot.unsuccessful {
+  background-color: red;
+}
+
+/* ---------- Pagination ---------- */
+.order-management-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-management-pagination-button {
+  padding: 10px 16px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.order-management-pagination-button:hover {
+  background-color: #ddd;
+}
+
+.order-management-pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+  .order-management-container {
+    padding: 10px;
+  }
+
+  .order-management-title {
+    font-size: 28px;
+    margin: 50px 0 10px 0;
+  }
+
+  .order-management-filter {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .order-management-filter-search,
+  .order-management-filter-status {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .order-management-table-header,
+  .order-management-table-data {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .order-management-detail-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .order-management-pagination-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

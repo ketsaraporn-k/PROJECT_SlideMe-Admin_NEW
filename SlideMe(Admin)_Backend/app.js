@@ -9,12 +9,16 @@ import usersRouter from "./routers/usersRouter.js";
 import filesRouter from "./routers/FilesBannerUploads.js";
 import bannerinfoRouter from "./routers/bannerinfoRouter.js";
 
+
+
 // Import Swagger Configuration
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger.js";  // ✅ นำเข้า swaggerSpec
 import providerApproveRouter from "./routers/providerApproveRouter.js";
 import providerManagementRouter from "./routers/providerManagementRouter.js";
 import userManagement from "./routers/userManagementRouter.js";
+import orderRoutes from "./routers/orderRoutes.js";
+import adminRoutes from "./routers/adminRoutes.js";
 
 // Create Express App
 const app = express();
@@ -37,7 +41,8 @@ app.use("/providerApprove", providerApproveRouter);
 app.use("/providerManagement", providerManagementRouter);
 app.use("/files", express.static(path.join(__dirname, "files")));
 app.use("/userManagement", userManagement);
-
+app.use("/api/orders", orderRoutes);
+app.use("/api/admins", adminRoutes);
 
 // Swagger API Documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
