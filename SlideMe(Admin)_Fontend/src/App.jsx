@@ -17,8 +17,10 @@ import ProviderManagement from "./Components/PAGES/providerManagement/providerMa
 import ProviderDetail from "./Components/PAGES/providerManagement/providerDetail/providerDetail";
 import UserManagement from "./Components/PAGES/userManagement/userManagement";
 import UserManagementDetail from "./Components/PAGES/userManagement/userManagementDetail/userManagementDetail";
-
-
+import OrderDetail from "./Components/PAGES/orderdetail/orderdetail";
+import OrderManagement from "./Components/PAGES/ordermanage/ordermanage";
+import AdminManagement from "./Components/PAGES/adminmanage/adminmanage";
+import AdminEdit from "./Components/PAGES/adminedit/adminedit";
 
 function App() {
   const [tab, setTab] = useState("home");
@@ -79,17 +81,33 @@ function App() {
           element={isLoggedIn ? <ProviderManagement /> : <Navigate to="/" />}
         />
         <Route
-        path="/providerdetail/:id"
-        element={isLoggedIn ? <ProviderDetail /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/usermanagement"
-        element={isLoggedIn ? <UserManagement /> : <Navigate to="/" />}
-      />
-      <Route
-        path="/userManagement/:id"
-        element={isLoggedIn ? <UserManagementDetail /> : <Navigate to="/" />}
-      />
+          path="/providerdetail/:id"
+          element={isLoggedIn ? <ProviderDetail /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/usermanagement"
+          element={isLoggedIn ? <UserManagement /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/userManagement/:id"
+          element={isLoggedIn ? <UserManagementDetail /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/order-management"
+          element={isLoggedIn ? <OrderManagement /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/orders/:orderId" // เปลี่ยนจาก /orderdetail/:orderId
+          element={isLoggedIn ? <OrderDetail /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/admin-management"
+          element={isLoggedIn ? <AdminManagement /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/admin-edit/:adminId"
+          element={isLoggedIn ? <AdminEdit /> : <Navigate to="/" />}
+        />
       </Routes>
     </HashRouter>
   );

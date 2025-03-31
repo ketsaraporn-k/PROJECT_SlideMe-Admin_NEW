@@ -1,0 +1,130 @@
+/* orderdetail.css */
+
+/* ปรับ container ให้กว้างขึ้น */
+.order-detail-container {
+  max-width: 1000px;
+  margin: 60px auto 20px;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* แสดง Order Detail และปุ่ม Back ในบรรทัดเดียวกัน */
+.order-detail-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* เพิ่มระยะห่างระหว่างส่วนของ title และปุ่ม */
+  margin-bottom: 20px;
+}
+
+/* ปรับ title ให้อยู่แนวนอกกรอบ */
+.order-detail-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ปุ่ม Back */
+.order-detail-back-button {
+  padding: 10px 20px; /* เพิ่มขนาดปุ่ม */
+  font-size: 18px; /* เพิ่มขนาดตัวอักษรให้ชัดเจน */
+  font-weight: bold;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ปุ่ม */
+}
+
+/* Hover effect */
+.order-detail-back-button:hover {
+  background: #333333;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.order-detail-error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Layout ของฟอร์ม */
+.order-detail-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px; /* เพิ่มระยะห่างระหว่างฟอร์ม */
+}
+
+/* กล่องฟอร์ม */
+.order-detail-form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px; /* เพิ่มระยะห่างระหว่างกล่อง */
+}
+
+/* Label */
+.order-detail-form-label {
+  font-weight: bold;
+  width: 150px;
+  text-align: right;
+}
+
+/* Span (ใช้แทน input) */
+.order-detail-form-value {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f8f9fa;
+  font-size: 16px;
+  color: #333;
+  word-wrap: break-word; /* ทำให้ข้อความยาวๆ ขึ้นบรรทัดใหม่ได้ */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-detail-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .order-detail-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-detail-back-button {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .order-detail-title {
+    font-size: 22px;
+  }
+
+  .order-detail-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-detail-form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-detail-form-label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .order-detail-form-value {
+    width: 100%;
+  }
+}
