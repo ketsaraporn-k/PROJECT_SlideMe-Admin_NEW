@@ -8,7 +8,7 @@ const db = await mysql.createConnection({
   database: 'jwt'
 });
 
-// 📌 1️⃣ ดึงรายการแบนเนอร์ทั้งหมด
+//  1️ ดึงรายการแบนเนอร์ทั้งหมด
 export const getAllBanners = async () => {
   try {
     const [rows] = await db.execute("SELECT * FROM banners");
@@ -18,7 +18,7 @@ export const getAllBanners = async () => {
   }
 };
 
-// 📌 2️⃣ เพิ่มแบนเนอร์ใหม่
+//  2️ เพิ่มแบนเนอร์ใหม่
 export const createBanner = async (title, subtitle, description, imageUrl, date, isActive) => {
   try {
     await db.execute(
@@ -30,7 +30,7 @@ export const createBanner = async (title, subtitle, description, imageUrl, date,
   }
 };
 
-// 📌 3️⃣ อัปเดตแบนเนอร์
+//  3️ อัปเดตแบนเนอร์
 export const updateBanner = async (id, title, subtitle, description, imageUrl, date, isActive) => {
   try {
     await db.execute(
@@ -42,7 +42,7 @@ export const updateBanner = async (id, title, subtitle, description, imageUrl, d
   }
 };
 
-// 📌 4️⃣ ลบแบนเนอร์
+//  4️ ลบแบนเนอร์
 export const deleteBanner = async (id) => {
   try {
     await db.execute("DELETE FROM banners WHERE id=?", [id]);

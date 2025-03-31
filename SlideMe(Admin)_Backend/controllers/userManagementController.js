@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-// ✅ สร้าง Connection Pool ในไฟล์นี้
+//  สร้าง Connection Pool ในไฟล์นี้
 const pool = mysql.createPool({
   host: "localhost",
   user: "admin",
@@ -21,7 +21,7 @@ const query = async (sql, params) => {
   }
 };
 
-// ✅ ดึงข้อมูลผู้ใช้ทั้งหมด
+//  ดึงข้อมูลผู้ใช้ทั้งหมด
 export const getUsers = async (req, res) => {
   try {
     const [users] = await pool.query(
@@ -33,7 +33,7 @@ export const getUsers = async (req, res) => {
   }
 };
 
-// ✅ ดึงข้อมูลผู้ใช้ตาม ID
+//  ดึงข้อมูลผู้ใช้ตาม ID
 export const getUserById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +49,7 @@ export const getUserById = async (req, res) => {
   }
 };
 
-// ✅ เพิ่มผู้ใช้ (POST)
+//  เพิ่มผู้ใช้ (POST)
 export const createUser = async (req, res) => {
   const { name_User, email_User, password_User, phone_number_User } = req.body;
   try {
@@ -63,7 +63,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-// ✅ อัพเดทข้อมูลผู้ใช้ (PUT)
+//  อัพเดทข้อมูลผู้ใช้ (PUT)
 export const updateUser = async (req, res) => {
   const { id } = req.params;
   const { name_User, email_User, phone_number_User } = req.body;
@@ -78,7 +78,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
-// ✅ ลบผู้ใช้ (DELETE)
+//  ลบผู้ใช้ (DELETE)
 export const deleteUser = async (req, res) => {
   const { id } = req.params;
   try {

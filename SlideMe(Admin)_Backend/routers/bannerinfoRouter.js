@@ -39,7 +39,7 @@ const bannerinfoRouter = Router();
  *       500:
  *         description: Error
  */
-// 📌 1️⃣ ดึงรายการแบนเนอร์ทั้งหมด
+//  1 ดึงรายการแบนเนอร์ทั้งหมด
 bannerinfoRouter.get("/banner", async (req, res) => {  
   try {
     const banners = await getAllBanners();
@@ -87,7 +87,7 @@ bannerinfoRouter.get("/banner", async (req, res) => {
  *       500:
  *         description: Error
  */
-// 📌 2️⃣ เพิ่มแบนเนอร์ใหม่
+//  2️ เพิ่มแบนเนอร์ใหม่
 bannerinfoRouter.post("/banner", async (req, res) => {
     console.log("🔹 ข้อมูลที่ได้รับจาก React:", req.body);
   
@@ -149,7 +149,7 @@ bannerinfoRouter.post("/banner", async (req, res) => {
  *       500:
  *         description: Error
  */
-// 📌 3️⃣ อัปเดตแบนเนอร์
+//  3️ อัปเดตแบนเนอร์
 bannerinfoRouter.put("/banner/:id", async (req, res) => {  
   const { id } = req.params;
   const { title, subtitle, description, imageUrl, date, isActive } = req.body;
@@ -192,7 +192,7 @@ bannerinfoRouter.put("/banner/:id", async (req, res) => {
  *       500:
  *         description: Error
  */
-// 📌 4️⃣ ลบแบนเนอร์
+//  4️ ลบแบนเนอร์
 bannerinfoRouter.delete("/banner/:id", async (req, res) => {  
   const { id } = req.params;
 

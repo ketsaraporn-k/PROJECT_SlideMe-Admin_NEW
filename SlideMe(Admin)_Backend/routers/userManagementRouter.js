@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-// ✅ ดึงข้อมูลผู้ใช้ทั้งหมด
+//  ดึงข้อมูลผู้ใช้ทั้งหมด
 router.get("/", async (req, res, next) => {
   try {
     const users = await getUsers(req, res);
@@ -19,7 +19,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// ✅ ดึงข้อมูลผู้ใช้ตาม ID
+//  ดึงข้อมูลผู้ใช้ตาม ID
 router.get("/:id", async (req, res, next) => {
   try {
     const user = await getUserById(req, res);
@@ -32,7 +32,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// ✅ เพิ่มผู้ใช้ใหม่
+//  เพิ่มผู้ใช้ใหม่
 router.post("/", async (req, res, next) => {
   try {
     await createUser(req, res);
@@ -42,7 +42,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-// ✅ อัพเดทข้อมูลผู้ใช้
+//  อัพเดทข้อมูลผู้ใช้
 router.put("/:id", async (req, res, next) => {
   try {
     await updateUser(req, res);
@@ -52,7 +52,7 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
-// ✅ ลบผู้ใช้
+//  ลบผู้ใช้
 router.delete("/:id", async (req, res, next) => {
   try {
     await deleteUser(req, res);
