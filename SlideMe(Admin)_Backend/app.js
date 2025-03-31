@@ -8,13 +8,14 @@ import { fileURLToPath } from "url";
 import usersRouter from "./routers/usersRouter.js";
 import filesRouter from "./routers/FilesBannerUploads.js";
 import bannerinfoRouter from "./routers/bannerinfoRouter.js";
-
-// Import Swagger Configuration
-import swaggerUi from "swagger-ui-express";
-import swaggerSpec from "./swagger.js";  // ✅ นำเข้า swaggerSpec
 import providerApproveRouter from "./routers/providerApproveRouter.js";
 import providerManagementRouter from "./routers/providerManagementRouter.js";
 import userManagement from "./routers/userManagementRouter.js";
+
+// Import Swagger Configuration
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./swagger-67183473.js";  // ✅ นำเข้า swaggerSpec
+
 
 // Create Express App
 const app = express();
@@ -24,6 +25,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // ✅ รองรับ Form Data
 app.use("/public", express.static("public"));
+
 // Get the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

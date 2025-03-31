@@ -98,6 +98,10 @@ const filesRouter = Router();
  * /files/list:
  *   get:
  *     summary: Get a list of files
+ *     description: |
+ *                   - API สำหรับดึงรายการไฟล์ที่ถูกอัปโหลดไว้ในเซิร์ฟเวอร์  
+ *                   - ระบบจะอ่านไฟล์จากโฟลเดอร์ `/public`  
+ *                   - ส่งคืนรายการไฟล์พร้อม URL สำหรับเข้าถึงไฟล์  
  *     tags: [filesbanneruploads]
  *     requestBody:
  *       required: true
@@ -108,7 +112,7 @@ const filesRouter = Router();
  *             properties:
  *               filename:
  *                 type: string
- *     description: Get a list of files 
+ *     
  *     responses:
  *       200:
  *         description: Success
@@ -136,6 +140,11 @@ filesRouter.get("/list", (req, res) => {
  * /files/upload:
  *   post:
  *     summary: Upload a file
+ *     description: |
+ *                - API สำหรับอัปโหลดไฟล์ไปเก็บไว้ในโฟลเดอร์ `/public`  
+ *                - รองรับการอัปโหลดแบบ `multipart/form-data`  
+ *                - ระบบจะตั้งชื่อไฟล์ใหม่โดยเพิ่ม `timestamp` ด้านหน้า  
+ *                - หลังอัปโหลดสำเร็จ ระบบจะส่งคืน URL ของไฟล์  
  *     tags: [filesbanneruploads]
  *     requestBody:
  *       required: true
@@ -147,7 +156,7 @@ filesRouter.get("/list", (req, res) => {
  *               test:
  *                 type: string
  *                 format: binary
- *     description: Upload a file
+ *     
  *     responses:
  *       200:
  *         description: File uploaded successfully
@@ -171,6 +180,11 @@ filesRouter.post("/upload", upload.single("test"), (req, res) => {
  * /files/delete:
  *   delete:
  *     summary: Delete a file
+ *     description: |
+ *       - API สำหรับลบไฟล์ที่อยู่ในโฟลเดอร์ `/public`  
+ *       - ต้องส่ง `filename` ผ่าน request body  
+ *       - หากไฟล์มีอยู่ ระบบจะลบและแจ้งสถานะสำเร็จ  
+ *       - หากไม่พบไฟล์ หรือเกิดข้อผิดพลาด ระบบจะแสดงข้อความแจ้งเตือน  
  *     tags: [filesbanneruploads]
  *     requestBody:
  *       required: true
@@ -181,7 +195,7 @@ filesRouter.post("/upload", upload.single("test"), (req, res) => {
  *             properties:
  *               filename:
  *                 type: string
- *     description: Delete a file
+ *     
  *     responses:
  *       200:
  *         description: File deleted successfully

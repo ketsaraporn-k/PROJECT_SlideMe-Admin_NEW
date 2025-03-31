@@ -8,6 +8,10 @@ const bannerinfoRouter = Router();
  * /banner:
  *   get:
  *     summary: Get a list of banners
+ *     description: |
+ *                   - ดึงรายการแบนเนอร์ทั้งหมดจากระบบ รวมถึงรายละเอียด เช่น ชื่อ หัวข้อย่อย คำอธิบาย รูปภาพ วันที่ และสถานะการใช้งาน (isActive) 
+ *                   - ส่งคืนรายการแบนเนอร์ทั้งหมด
+ * 
  *     tags: 
  *       - bannerinfo
  *     requestBody:
@@ -50,6 +54,10 @@ bannerinfoRouter.get("/banner", async (req, res) => {
  * /banner:
  *   post:
  *     summary: Create a new banner
+ *     description: |
+ *                   - สร้างแบนเนอร์ใหม่
+ *                   - ระบบจะตรวจสอบข้อมูลและสร้างแบนเนอร์ใหม่
+ *                   - เพิ่มแบนเนอร์ใหม่เข้าสู่ระบบ โดยต้องระบุ title และ imageUrl เป็นค่าที่จำเป็น
  *     tags: 
  *       - bannerinfo
  *     requestBody:
@@ -104,6 +112,16 @@ bannerinfoRouter.post("/banner", async (req, res) => {
  * /banner/{id}:
  *   put:
  *     summary: Update a banner
+ *     description: |
+ *                   - อัปเดตแบนเนอร์
+ *                   - ระบบจะตรวจสอบข้อมูลและอัปเดตแบนเนอร์ใหม่
+ *                   - ต้องระบุ id ของแบนเนอร์ที่ต้องการอัปเดต
+ *                   - ส่งคืนสถานะการอัปเดตแบนเนอร์
+ *                   - หากไม่พบแบนเนอร์ที่ต้องการอัปเดต ระบบจะแสดงข้อความแจ้งเตือน
+ *                   - หากพบข้อผิดพลาดในการอัปเดต ระบบจะแสดงข้อความแจ้งเตือน
+ *                   - หากอัปเดตแบนเนอร์สําเร็จ ระบบจะแสดงข้อความแจ้งเตือน
+ *                   - อัปเดตข้อมูลของแบนเนอร์ที่ระบุโดย id สามารถแก้ไขชื่อ คำอธิบาย รูปภาพ วันที่ และสถานะ (isActive)
+ * 
  *     tags: 
  *       - bannerinfo
  *     requestBody:
@@ -149,6 +167,13 @@ bannerinfoRouter.put("/banner/:id", async (req, res) => {
  * /banner/{id}:
  *   delete:
  *     summary: Delete a banner
+ *     description: |
+ *                   - ลบแบนเนอร์
+ *                   - ต้องระบุ id ของแบนเนอร์ที่ต้องการลบออกจากระบบ
+ *                   - ส่งคืนสถานะการลบแบนเนอร์
+ *                   - หากไม่พบแบนเนอร์ที่ต้องการลบ ระบบจะแสดงข้อความแจ้งเตือน
+ *                   - หากพบข้อผิดพลาดในการลบ ระบบจะแสดงข้อความแจ้งเตือน
+ *                   - หากลบแบนเนอร์สําเร็จ ระบบจะแสดงข้อความแจ้งเตือน
  *     tags: 
  *       - bannerinfo
  *     requestBody:
@@ -160,7 +185,7 @@ bannerinfoRouter.put("/banner/:id", async (req, res) => {
  *             properties:
  *               id:
  *                 type: string
- *     description: Delete a banner
+ * 
  *     responses:
  *       200:
  *         description: Banner deleted successfully
