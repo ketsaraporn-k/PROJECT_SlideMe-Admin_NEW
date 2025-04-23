@@ -1,0 +1,136 @@
+/* CSS จาก adminmanage.css */
+.admin-management-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin-left: 400px; /* ขยับเนื้อหาไปทางขวา */
+}
+
+.admin-management-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-management-form {
+  background-color: #fff;
+  border: 1px solid #28a745; /* ลดความหนาของ border */
+  border-radius: 8px; /* ปรับ radius ให้โค้งมนเล็กน้อย */
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* ลด gap ระหว่าง inputs */
+  justify-content: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-management-form input {
+  width: calc(50% - 10px);
+  padding: 10px; /* ลด padding ของ input */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px; /* ลด font size ของ input */
+}
+
+@media (max-width: 600px) {
+  .admin-management-form input {
+    width: 100%;
+  }
+}
+
+.admin-management-form button {
+  padding: 8px 12px; /* ลด padding ของ button */
+  border: none;
+  border-radius: 5px;
+  font-size: 14px; /* ลด font size ของ button */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.admin-management-form button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.admin-management-form button[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.admin-management-table {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-management-table th, .admin-management-table td {
+  padding: 8px; /* ลด padding ของ table cells */
+  font-size: 14px; /* ลด font size ของ table cells */
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.admin-management-table th {
+  background-color: #28a745;
+  color: white;
+}
+
+.admin-management-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background-color: #28a745;
+  color: white;
+  margin: 5px;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background-color: #218838;
+}
+
+/* เพิ่มเติมสำหรับปุ่ม Delete และ Edit */
+.delete-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #000000;
+}
+
+.admin-management-table button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-management-table button:first-child {
+  background-color: #7a7a7a;
+  color: white;
+}
+
+admin-management-table button:first-child:hover {
+  background-color: #7a7a7a;
+}

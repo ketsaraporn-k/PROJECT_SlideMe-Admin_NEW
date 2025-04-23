@@ -1,0 +1,135 @@
+/* Container ของหน้า Review Management */
+.review-management-container {
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 230px;
+}
+
+/* หัวข้อ "การจัดการข้อมูลการรีวิว" */
+.review-management-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ข้อความเมื่อไม่มีข้อมูลหรือกำลังโหลด */
+.review-management-empty {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+/* ตารางรีวิว */
+.review-management-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed; /* ทำให้ตารางรักษาความกว้างที่กำหนด */
+}
+
+/* หัวตาราง */
+.review-management-header {
+  background-color: #e0e0e0; /* สีเทาคล้ายในภาพ */
+  color: #333;
+  font-weight: bold;
+}
+
+/* คอลัมน์ในหัวตาราง */
+.review-management-header th {
+  padding: 12px 15px;
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+  border-bottom: 2px solid #ccc;
+  white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+  overflow: hidden;
+  text-overflow: ellipsis; /* เพิ่ม ... ถ้าข้อความยาวเกิน */
+}
+
+/* คอลัมน์ "ลำดับ" */
+.review-management-index {
+  width: 10%;
+  text-align: center;
+}
+
+/* คอลัมน์ "ชื่อ Provider" */
+.review-management-provider {
+  width: 25%; /* เพิ่มความกว้างให้เหมาะสม */
+}
+
+/* คอลัมน์ "การรีวิว" */
+.review-management-review {
+  width: 30%; /* เพิ่มความกว้างให้เหมาะสม */
+}
+
+/* คอลัมน์ "คะแนนการรีวิว" */
+.review-management-rating {
+  width: 20%;
+  text-align: center;
+}
+
+/* คอลัมน์ "ตรวจสอบ" */
+.review-management-check {
+  width: 15%; /* ลดความกว้างเพื่อให้สมดุล */
+  text-align: center;
+}
+
+/* แถวในตาราง */
+.review-management-row {
+  border-bottom: 1px solid #eee;
+}
+
+/* เซลล์ในแถว */
+.review-management-row td {
+  padding: 12px 15px;
+  color: #333;
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* สไตล์สำหรับ "ลำดับ" ในแถว */
+.review-management-row .review-management-index {
+  text-align: center;
+}
+
+/* สไตล์สำหรับ "ชื่อ Provider" ในแถว */
+.review-management-row .review-management-provider {
+  text-align: center;
+}
+
+/* สไตล์สำหรับ "การรีวิว" ในแถว */
+.review-management-row .review-management-review {
+  text-align: center;
+}
+
+/* สไตล์สำหรับ "คะแนนการรีวิว" ในแถว */
+.review-management-row .review-management-rating {
+  text-align: center;
+  color: #ffca28; /* สีดาวเหลือง */
+}
+
+/* สไตล์สำหรับ "ตรวจสอบ" ในแถว */
+.review-management-row .review-management-check {
+  text-align: center;
+}
+
+/* ปุ่ม "ตรวจสอบ" */
+.review-management-check-button {
+  background-color: #333; /* สีดำคล้ายในภาพ */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.review-management-check-button:hover {
+  background-color: #555;
+}

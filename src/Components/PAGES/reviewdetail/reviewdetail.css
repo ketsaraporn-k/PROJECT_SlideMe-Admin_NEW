@@ -1,0 +1,114 @@
+/* Container ของหน้า Check Review */
+.check-review-container {
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 230px;
+  }
+  
+  /* ปุ่ม "ย้อนกลับ" */
+  .check-review-back-button {
+    background-color: #666; /* สีเทาคล้ายในภาพ */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .check-review-back-button:hover {
+    background-color: #777;
+  }
+  
+  /* หัวข้อ "รายละเอียดการรีวิว" */
+  .check-review-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* กล่องรายละเอียดรีวิว */
+  .check-review-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  /* แต่ละแถวในรายละเอียด */
+  .check-review-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .check-review-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Label เช่น "ชื่อ Provider" */
+  .check-review-label {
+    font-weight: bold;
+    color: #333;
+    width: 150px;
+  }
+  
+  /* สถานะ "ตรวจสอบแล้ว" */
+  .check-review-checked {
+    color: #4caf50; /* สีเขียว */
+  }
+  
+  /* สถานะ "ยังไม่ตรวจสอบ" */
+  .check-review-not-checked {
+    color: #f44336; /* สีแดง */
+  }
+  
+  /* คะแนนการรีวิว (ดาว) */
+  .check-review-rating {
+    color: #ffca28; /* สีดาวเหลือง */
+  }
+  
+  /* ปุ่ม "ตรวจสอบแล้ว" */
+  .check-review-button {
+    background-color: #333; /* สีดำ */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .check-review-button:hover {
+    background-color: #555;
+  }
+  
+  /* ข้อความกำลังโหลด */
+  .check-review-loading {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  
+  /* ข้อความข้อผิดพลาด */
+  .check-review-error {
+    text-align: center;
+    color: #f44336;
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  
+  /* ข้อความไม่พบข้อมูล */
+  .check-review-not-found {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin: 20px 0;
+  }

@@ -1,0 +1,71 @@
+.provider-detail-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.provider-detail-container .h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.provider-detail-container .form-container {
+  margin-bottom: 20px;
+}
+
+.provider-detail-container .form-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.provider-detail-container .form-item label {
+  font-weight: bold;
+  color: #555;
+  width: 30%;
+}
+
+.provider-detail-container .form-item input {
+  width: 65%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+}
+
+.provider-detail-container .form-item input:disabled {
+  background-color: #f0f0f0;
+}
+
+.provider-detail-container .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.provider-detail-container button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.provider-detail-container button:hover {
+  background-color: #45a049;
+}
+
+.provider-detail-container button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

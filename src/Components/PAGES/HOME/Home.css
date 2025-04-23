@@ -1,0 +1,98 @@
+/* Main container */
+.home-container {
+  border: none;
+  border-radius: 1rem;
+  
+  text-align: center;
+  padding: 2rem;
+  background-image: url("/zig-zag.png");
+  background-color: #30ae9e; /* Light blue background */
+  margin: 2rem auto; /* Center on page */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  position: relative;
+  overflow: hidden; /* To prevent overflow */
+  margin-left: 320px; /* ขยับเนื้อหาไปทางขวา */
+  padding: 20px;
+  margin-right: 20px;/*เนื้อหาเว้นขอบจากขวา  */
+  
+  
+  
+}
+
+/* Content container */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements */
+  justify-content: center;
+  height: 60vh; /* ให้สูงเท่ากับ 60% ของ viewportพื้นหลัง */
+}
+
+/* Image container */
+.img-container {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #007acc; /* ขอบสีน้ำเงิน */
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  margin-bottom: 1.5rem;
+  background-image: url("/logo.png"); /* ให้แน่ใจว่า path ถูกต้อง */
+  background-size: contain; /* ปรับให้ภาพพอดีกับขอบ */
+  background-repeat: no-repeat; /* ไม่ให้มีการทำซ้ำภาพ */
+  background-position: center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.img-container:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+/* Footer styling */
+.footer-text {
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  font-size: 1rem;
+  line-height: 1.8; /* More line height for readability */
+  color: #333;
+  max-width: 600px;
+  text-align: left; /* Left-align text */
+  margin-top: 1.5rem;
+}
+
+/* Hover effect for footer */
+.footer-text:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+/* Heading styling */
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #007acc; /* Blue color for heading */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .footer-text {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .img-container {
+    width: 150px;
+    height: 150px;
+  }
+}

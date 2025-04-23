@@ -1,0 +1,80 @@
+.dashboard {
+    margin-left: 320px;  /* ขยับเนื้อหาไปทางขวา */
+    margin-right: 20px;  /* เนื้อหาเว้นขอบจากขวา */
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .card-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 1.2rem;
+  }
+  
+  .card.red {
+    background-color: #f28b82;
+  }
+  
+  .card.orange {
+    background-color: #fbbc04;
+  }
+  
+  .card.green {
+    background-color: #81c995;
+  }
+  
+  .card.purple {
+    background-color: #d7aefb;
+  }
+  
+  .charts-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .chart-box {
+    flex: 1;
+    min-width: 45%;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-list {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .bar {
+    height: 10px;
+    background-color: #42a5f5;
+    border-radius: 5px;
+  }
+  

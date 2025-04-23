@@ -1,0 +1,175 @@
+.vehicle-container {
+    background: #f7fbf8;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin-left: 230px;
+  }
+  
+  .vehicle-container .vehicle-form,
+  .vehicle-container .vehicle-table {
+    border: 2px solid #107b10;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: white;
+  }
+  
+  .vehicle-container .vehicle-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+  }
+  
+  .vehicle-container .vehicle-form input[type="text"],
+  .vehicle-container .vehicle-form textarea,
+  .vehicle-container .vehicle-form input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .vehicle-container .vehicle-form textarea {
+    resize: vertical;
+  }
+  
+  .vehicle-container .button-group {
+    margin-top: 1.5rem;
+  }
+  
+  .vehicle-container .save-btn,
+  .vehicle-container .cancel-btn {
+    padding: 0.5rem 1.5rem;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .vehicle-container .save-btn {
+    background-color: #00c47c;
+    color: white;
+  }
+  
+  .vehicle-container .cancel-btn {
+    background-color: black;
+    color: white;
+  }
+  
+  .vehicle-container .vehicle-table h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .vehicle-container .vehicle-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .vehicle-container .vehicle-table th,
+  .vehicle-container .vehicle-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .vehicle-container .vehicle-table img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .vehicle-container .edit-btn,
+  .vehicle-container .delete-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .vehicle-container .edit-btn {
+    background-color: #ddd;
+  }
+  
+  .vehicle-container .delete-btn {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Toggle switch */
+  .vehicle-container .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+  }
+  
+  .vehicle-container .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .vehicle-container .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+  }
+  
+  .vehicle-container .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  .vehicle-container input:checked + .vehicle-container .slider {
+    background-color: #00c47c;
+  }
+  
+  .vehicle-container input:checked + .vehicle-container .slider:before {
+    transform: translateX(22px);
+  }
+  
+  .vehicle-container .edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vehicle-container .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px #00000050;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .vehicle-container .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  

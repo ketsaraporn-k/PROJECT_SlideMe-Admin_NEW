@@ -1,0 +1,87 @@
+.provider-management-container {
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 230px; /* ขยับเนื้อหาไปทางขวา */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.provider-management-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.provider-management-container .provider-management-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.provider-management-container .provider-management-table th,
+.provider-management-container .provider-management-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.provider-management-container .provider-management-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.provider-management-container .provider-management-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.provider-management-container .details-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.provider-management-container .details-btn:hover {
+  background-color: #333;
+}
+
+.provider-management-container .pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.provider-management-container .pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.provider-management-container .pagination button:hover {
+  background-color: #333;
+}
+
+.provider-management-container .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.provider-management-container .pagination .page-number {
+  font-size: 16px;
+  color: #333;
+  margin: 0 5px;
+}

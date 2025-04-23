@@ -1,0 +1,93 @@
+.navber-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px; /* กำหนดความกว้างของ Sidebar */
+    height: 100vh; /* ให้สูงเต็มจอ */
+    background-color: #0D7342; /* สีพื้นหลัง */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.sidebar-logo img {
+    width: 100%; /* ขนาดของรูป 80% ของความกว้างของ .sidebar-logo */
+    height: auto; /* ความสูงจะปรับให้เหมาะสมกับความกว้าง */
+    object-fit: contain; /* ปรับให้รูปภาพคงสัดส่วน */
+    padding: 15px;
+
+  }
+
+  .sidebar-menu  {
+    list-style-type: none;
+    padding: 0;
+    
+    width: 80%;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+    color: white;
+    transition: 0.4s;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.active {
+    padding: 10px 15px;
+    background-color: #03D069;
+    border-radius: 10px;
+}
+
+.menu-item:hover {
+    padding: 10px 15px;
+    background-color: #03D069;
+    border-radius: 10px;
+}
+
+  
+
+.btn {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #03D069;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #03D069;
+    color: white;
+}
+
+.btn-outline-primary:hover {
+    background-color: #03D069;
+    color: white;
+}
+
+.btn-danger {
+    background-color: rgb(252, 67, 67);
+}
+
+.btn-danger:hover {
+    background-color: rgb(200, 50, 50);
+}

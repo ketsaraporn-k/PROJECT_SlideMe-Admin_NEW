@@ -1,0 +1,104 @@
+.provider-approve-container {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-left: 200px; /* ขยับเนื้อหาไปทางขวา */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.provider-approve-container .provider-approve-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.provider-approve-container .filter-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.provider-approve-container .filter-container label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.provider-approve-container .filter-container select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.provider-approve-container .provider-approve-table {
+  width: 100%; /* กำหนดความกว้างของตาราง */
+  border-collapse: collapse; /* รวมขอบของเซลล์เข้าด้วยกัน */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto; /* จัดตารางให้อยู่กลาง */
+  table-layout: fixed; /* ใช้การจัดการความกว้างของตารางให้เท่ากันทุกเซลล์ */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.provider-approve-container .provider-approve-table th,
+.provider-approve-container .provider-approve-table td {
+  padding: 12px px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.provider-approve-container .provider-approve-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.provider-approve-container .provider-approve-table tr {
+  height: 50px;
+}
+
+.provider-approve-container .provider-approve-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.provider-approve-container .provider-approve-check-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.provider-approve-container .provider-approve-check-btn:hover {
+  background-color: #333;
+}
+
+.provider-approve-container .pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.provider-approve-container .pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.provider-approve-container .pagination button:hover {
+  background-color: #333;
+}
+
+.provider-approve-container .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
